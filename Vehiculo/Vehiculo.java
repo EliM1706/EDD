@@ -1,3 +1,5 @@
+package Vehiculo;
+
 public class Vehiculo {
 
     private String chasis;

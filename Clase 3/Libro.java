@@ -13,6 +13,13 @@ public class Libro {
                 " autor: " + autor +
                 " precio: " + precio +"}";
     }
+    public static int calcularPrecioTotal(Libro[] libros) {
+        int total = 0;
+        for (int i = 0; i < libros.length; i++) {
+            total += libros[i].precio;
+        }
+        return total;
+    }
      
     public String iterarLibro(Libro[] libro) {
         String cad = "";

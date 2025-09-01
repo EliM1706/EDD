@@ -7,6 +7,10 @@ public class Main {
         LIB [2] = new Libro("Cronica de una muerte anunciada", "Gabriel Garcia Marquez", 45000);
         LIB [3] = new Libro("Divergente", "Veronica Roth", 55000);
         LIB [4] = new Libro("A traves de mi ventana", "Ariana Godoy", 55000);
+        System.out.println(LIB[0].iterarLibro(LIB));
+
+        int precioTotal = Libro.calcularPrecioTotal(LIB);
+        System.out.println("El precio total de todos los libros es: " + precioTotal);
 
 
     }
