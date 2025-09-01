@@ -1,4 +1,4 @@
-public class Main {
+public class MainL {
     public static void main(String[] args) {
         Libro[] LIB = new Libro[5];
 

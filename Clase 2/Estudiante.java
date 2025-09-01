@@ -1,5 +1,3 @@
-package Estruc_Datos.Clase2;
-
 public class Estudiante {
     // atrubutos clase
     private int id;
