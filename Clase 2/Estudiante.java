@@ -32,13 +32,13 @@ public class Estudiante {
         for (int i = 0; i < cursos.length; i++) {
             cad += cursos[i] + " ";
         }
-        System.out.println("id: " + id + "Cursos Matriculados: " + cad);
+        System.out.println("id: " + id + " Cursos Matriculados: " + cad);
     }
 
     public String toString() {
         return "Estudiante { id:" + id +
                 " Nombre: " + nombre +
-                "Apellido: " + apellido +
+                " Apellido: " + apellido +
                 " Facultad: " + facultad +
                 " Curso: " + curso + " }"; // maquetar(estetica)
     }

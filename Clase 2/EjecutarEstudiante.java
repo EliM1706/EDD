@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
-public class EjecutarE {
-    public static void main(String[] args) {
+public class EjecutarEstudiante {
+    public static <Estudiante> void main(String[] args) {
 
         // creacion de los objetos
         Estudiante objEst1 = new Estudiante(909876, "juanito", "perez", "ingenieria", "matematicas");
@@ -112,3 +112,5 @@ public class EjecutarE {
         }
     }
 }
+    
+   

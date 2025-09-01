@@ -1,5 +1,3 @@
-package Estruc_Datos.Clase1;
-
 public class Ejercicios {
     public static void main(String[] args) {
         // Sumar los elementos de un arreglo de enteros

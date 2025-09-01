@@ -1,5 +1,3 @@
-package Estruc_Datos.Clase1;
-
 import java.util.Random;
 
 public class OperacionesArreglos {
