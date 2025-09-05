@@ -17,6 +17,14 @@ public class MainL {
         for (Libro libro : LIB) { // recorre
             System.out.println(libro);// muestra el libro
         }
+        // Llamada al método buscarLibro (desde un objeto)
+        LIB[0].buscarLibro(LIB, "Divergente");
+
+        // Llamada al método cambiarPrecio (es static)
+        Libro.cambiarPrecio(LIB, "Divergente", 60000);
+
+        // Verifica que se haya cambiado
+        LIB[0].buscarLibro(LIB, "Divergente");
 
 
     }

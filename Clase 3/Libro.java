@@ -9,15 +9,15 @@ public class Libro {
         this.precio = precio;
     }
 
-    public String getTitulo() { // accede a los titulos de los libros 
+    public String getTitulo() { // accede a los titulos de los libros
         return titulo;
     }
 
-    public int getPrecio() { //accede a los precios de los libros
+    public int getPrecio() { // accede a los precios de los libros
         return precio;
     }
 
-    public void setPrecio(int precio) { //accede al cambio del precio de los libros 
+    public void setPrecio(int precio) { // accede al cambio del precio de los libros
         this.precio = precio;
     }
 
@@ -57,5 +57,52 @@ public class Libro {
             cad += libros[i] + "\n";
         }
         return cad;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+
+    public void buscarLibro(Libro[] libros, String tituloBuscado) {
+        int encontrado = 0;
+
+        for (int i = 0; i < libros.length; i++) {
+            String titulo = libros[i].titulo;
+            if (titulo == tituloBuscado) {
+                System.out.println("Libro encontrado:");
+                System.out.println(libros[i]);
+                encontrado = 1;
+            }
+        }
+
+        if (encontrado == 0) {
+            System.out.println("No disponible.");
+        }
+    }
+
+    public static void cambiarPrecio(Libro[] libros, String tituloBuscado, int nuevoPrecio) {
+        int actualizado = 0;
+
+        for (int i = 0; i < libros.length; i++) {
+            String titulo = libros[i].titulo;
+            if (titulo == tituloBuscado) {
+                libros[i].precio = nuevoPrecio;
+                System.out.println("precio actualizado.");
+                actualizado = 1;
+            }
+        }
+
+        if (actualizado == 0) {
+            System.out.println("No disponible.");
+        }
     }
 }
