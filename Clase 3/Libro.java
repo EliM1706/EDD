@@ -7,12 +7,26 @@ public class Libro {
         this.titulo = titulo;
         this.autor = autor;
         this.precio = precio;
-    }  
-        public String toString() {
+    }
+
+    public String getTitulo() { // accede a los titulos de los libros 
+        return titulo;
+    }
+
+    public int getPrecio() { //accede a los precios de los libros
+        return precio;
+    }
+
+    public void setPrecio(int precio) { //accede al cambio del precio de los libros 
+        this.precio = precio;
+    }
+
+    public String toString() {
         return "Libro { titulo: " + titulo +
                 " autor: " + autor +
-                " precio: " + precio +"}";
+                " precio: " + precio + "}";
     }
+
     public static int calcularPrecioTotal(Libro[] libros) {
         int total = 0;
         for (int i = 0; i < libros.length; i++) {
@@ -20,11 +34,27 @@ public class Libro {
         }
         return total;
     }
-     
-    public String iterarLibro(Libro[] libro) {
+
+    public static void ordenarPorPrecio(Libro[] libros) {
+        int n = libros.length; // cuantos elementos hay en el arreglo a ordenar
+        for (int i = 0; i < n - 1; i++) { // cuantas veces recorre el algoritmo por el arreglo, pone el mas alto al
+                                          // final
+            for (int j = 0; j < n - i - 1; j++) { // recorre desde el principio hasta el ultimo no ordenado
+                if (libros[j].getPrecio() > libros[j + 1].getPrecio()) { // hace comparacion con el de al lado para
+                                                                         // ordenar o deja ahi
+                    // Intercambiar
+                    Libro temp = libros[j]; // guarda el libro actual en temp
+                    libros[j] = libros[j + 1]; // mueve el libro siguiente a la posicion actual
+                    libros[j + 1] = temp; // pone el libro guardado en temp en la posicion siguiente
+                }
+            }
+        }
+    }
+
+    public String iterarLibro(Libro[] libros) {
         String cad = "";
-        for (int i = 0; i < libro.length; i++) {
-            cad += libro[i] + "\n";
+        for (int i = 0; i < libros.length; i++) {
+            cad += libros[i] + "\n";
         }
         return cad;
     }

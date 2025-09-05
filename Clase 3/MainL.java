@@ -12,6 +12,12 @@ public class MainL {
         int precioTotal = Libro.calcularPrecioTotal(LIB);
         System.out.println("El precio total de todos los libros es: " + precioTotal);
 
+        Libro.ordenarPorPrecio(LIB);
+        System.out.println("Libros ordenados por precio (menor a mayor):");
+        for (Libro libro : LIB) { // recorre
+            System.out.println(libro);// muestra el libro
+        }
+
 
     }
 }
