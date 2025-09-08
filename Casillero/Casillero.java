@@ -15,13 +15,12 @@ public class Casillero {
         return disponible;
     }
 
-    // Asigna un paquete al casillero si está libre
     public void asignarPaquete(Paquete paquete) {
         if (disponible) { 
             this.paquete = paquete; 
             this.disponible = false; 
         } else {
-            System.out.println("Casillero " + casillero + " ocupado.");
+            System.out.println("Casillero " + casillero + " Ocupado.");
         }
     }
 

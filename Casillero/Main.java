@@ -8,8 +8,10 @@ public class Main {
         Scanner leer = new Scanner(System.in);
 
         // Creación del arreglo (CASILLEROS) de 20 posiciones
-        String[] m = { "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_",
-                "_", "_" };
+        Casillero[] casilleros = new Casillero[20];
+        for (int i = 0; i < casilleros.length; i++) {
+            casilleros[i] = new Casillero(i + 1);  
+        }
 
         boolean continuar = true;
         int op = 0;
@@ -27,14 +29,15 @@ public class Main {
             switch (op) {
                 case 1:
                     // Mostrar los casilleros
-                    for (int i = 0; i < m.length; i++) {
-                        System.out.print(m[i]);
+                    for (int i = 0; i < casilleros.length; i++) {
+                        System.out.print(casilleros[i]);
                     }
 
                     System.out.println();
 
                     System.out.println("Digite el casillero en el que desea colocar su paquete");
                     int pos = leer.nextInt();
+                    leer.nextLine(); 
 
                     // Validar que el usuario no digite números menores a cero ni mayores que 20
                     if (pos < 1 || pos > 20) {
@@ -42,31 +45,35 @@ public class Main {
                         break;
                     }
 
-                    // Validar y Asignar los casilleros a la posición digitada por el usuario
-                    if (m[pos - 1].equals("_")) {
-                        m[pos - 1] = "C";
-                        System.out.println("Su paquete ha sido asignado en el casillero # " + pos);
-                    } else {
-                        System.out.println("Espacio no disponible.");
+                     if (!casilleros[pos - 1].isDisponible()) {
+                        System.out.println("El casillero #" + pos + " ya está ocupado.");
+                        break;
                     }
 
-                    // Mostrar los casilleros actualizado
-                    for (int i = 0; i < m.length; i++) {
-                        System.out.print(m[i]);
+                 System.out.println("Ingrese la fecha de ingreso: ");
+                 String fechaIngreso = leer.nextLine();
+                 System.out.println("Ingrese el destinatario: ");
+                 String destinatario = leer.nextLine();
+
+                 Paquete paquete = new Paquete(fechaIngreso, destinatario);
+                 casilleros[pos - 1].asignarPaquete(paquete);
+
+                    System.out.println("Su paquete ha sido asignado en el casillero # " + pos);
+                    
+                    for (int i = 0; i < casilleros.length; i++) {
+                        System.out.print(casilleros[i]);
                     }
                     System.out.println();
-
-                    break;
-                case 2:
-                    System.out.println("Ingrese la fecha de ingreso: ");
-                    String fechaIngreso = leer.nextLine();  
-                    System.out.println("Ingrese el destinatario: ");
-                    String destinatario = leer.nextLine();
                 
-                    System.out.println();
-
                     break;
-                case 4:
+                
+                case 2: 
+                 System.out.println("Estado de los casilleros:");
+                    for (Casillero casillero : casilleros) {
+                        System.out.println("Casillero " + casillero.getCasillero() + ": " + casillero.getInformacionPaquete());
+                    }
+                     break;
+                case 3:
                     continuar = false; // Cambiar la condición para salir
                     break;
                 default:
