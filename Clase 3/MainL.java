@@ -12,11 +12,6 @@ public class MainL {
         int precioTotal = Libro.calcularPrecioTotal(LIB);
         System.out.println("El precio total de todos los libros es: " + precioTotal);
 
-        Libro.ordenarPorPrecio(LIB);
-        System.out.println("Libros ordenados por precio (menor a mayor):");
-        for (Libro libro : LIB) { // recorre
-            System.out.println(libro);// muestra el libro
-        }
         // Llamada al método buscarLibro (desde un objeto)
         LIB[0].buscarLibro(LIB, "Divergente");
 
@@ -25,6 +20,19 @@ public class MainL {
 
         // Verifica que se haya cambiado
         LIB[0].buscarLibro(LIB, "Divergente");
+
+        // Añadir una búsqueda más (opcional)
+        LIB[0].buscarLibro(LIB, "El Hobbit");  // Un título que no está en el arreglo, solo para probar
+
+        // Cambiar el precio de un libro inexistente
+        Libro.cambiarPrecio(LIB, "El Hobbit", 70000);  // Un título que no está en el arreglo
+
+        Libro.ordenarPorPrecio(LIB);
+        System.out.println("Libros ordenados por precio (menor a mayor):");
+        for (Libro libro : LIB) { // recorre
+            System.out.println(libro);// muestra el libro
+        }
+        
 
 
     }

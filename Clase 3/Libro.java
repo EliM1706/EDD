@@ -9,15 +9,15 @@ public class Libro {
         this.precio = precio;
     }
 
-    public String getTitulo() { // accede a los titulos de los libros
+    public String getTitulo() { 
         return titulo;
     }
 
-    public int getPrecio() { // accede a los precios de los libros
+    public int getPrecio() { 
         return precio;
     }
 
-    public void setPrecio(int precio) { // accede al cambio del precio de los libros
+    public void setPrecio(int precio) { 
         this.precio = precio;
     }
 
@@ -36,16 +36,16 @@ public class Libro {
     }
 
     public static void ordenarPorPrecio(Libro[] libros) {
-        int n = libros.length; // cuantos elementos hay en el arreglo a ordenar
-        for (int i = 0; i < n - 1; i++) { // cuantas veces recorre el algoritmo por el arreglo, pone el mas alto al
-                                          // final
-            for (int j = 0; j < n - i - 1; j++) { // recorre desde el principio hasta el ultimo no ordenado
-                if (libros[j].getPrecio() > libros[j + 1].getPrecio()) { // hace comparacion con el de al lado para
-                                                                         // ordenar o deja ahi
-                    // Intercambiar
-                    Libro temp = libros[j]; // guarda el libro actual en temp
-                    libros[j] = libros[j + 1]; // mueve el libro siguiente a la posicion actual
-                    libros[j + 1] = temp; // pone el libro guardado en temp en la posicion siguiente
+        int n = libros.length; 
+        for (int i = 0; i < n - 1; i++) { 
+                                         
+            for (int j = 0; j < n - i - 1; j++) { 
+                if (libros[j].getPrecio() > libros[j + 1].getPrecio()) { 
+                                                                         
+                    
+                    Libro temp = libros[j]; 
+                    libros[j] = libros[j + 1];
+                    libros[j + 1] = temp; 
                 }
             }
         }
@@ -99,6 +99,10 @@ public class Libro {
                 System.out.println("precio actualizado.");
                 actualizado = 1;
             }
+        }
+
+        if (actualizado == 0) {
+            System.out.println("No disponible.");
         }
 
         if (actualizado == 0) {
