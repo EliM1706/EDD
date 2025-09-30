@@ -43,5 +43,6 @@ public class PilasColas {
         //Buscamos un elemento que no esté dentro de la "pila", muestra -1 cuando no lo encuentra.
         System.out.println(pila.search(50));
 
-    }
+    }  
+    
 }
