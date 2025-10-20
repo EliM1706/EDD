@@ -39,7 +39,6 @@ public class Main {
                     int pos = leer.nextInt();
                     leer.nextLine(); 
 
-                    // Validar que el usuario no digite números menores a cero ni mayores que 20
                     if (pos < 1 || pos > 20) {
                         System.out.println("El casillero que digitó está fuera de los rangos válidos.");
                         break;
@@ -74,13 +73,13 @@ public class Main {
                     }
                      break;
                 case 3:
-                    continuar = false; // Cambiar la condición para salir
+                    continuar = false; 
                     break;
                 default:
                     System.out.println("Opción no válida.");
                     break;
             }
-        } while (continuar); // El bucle seguirá hasta que 'continuar' sea false
+        } while (continuar); 
 
         leer.close();
     }
